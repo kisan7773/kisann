@@ -1,0 +1,3109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Tata Interiors | Premium Furniture & Interior Design</title>
+
+  <meta name="description"
+        content="Tata Interiors — Premium furniture, modular kitchens, wardrobes, bedrooms, living rooms, TV units, pooja rooms and custom interiors. Serving Bengaluru and Karnataka.">
+
+  <meta name="theme-color" content="#0d0d0d">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+  <style>
+
+    /* ================================
+       RESET
+    ================================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: #0b0b0b;
+      color: #f5f2eb;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font-family: inherit;
+    }
+
+    :root {
+      --black: #0b0b0b;
+      --dark: #111111;
+      --dark2: #171717;
+      --cream: #f4efe5;
+      --muted: #aaa49b;
+      --gold: #c6a15b;
+      --gold-light: #e1c27d;
+      --border: rgba(255,255,255,.10);
+      --glass: rgba(255,255,255,.055);
+    }
+
+    .container {
+      width: min(1180px, 92%);
+      margin: auto;
+    }
+
+    .serif {
+      font-family: "Playfair Display", serif;
+    }
+
+    .gold {
+      color: var(--gold-light);
+    }
+
+
+    /* ================================
+       PRELOADER
+    ================================= */
+
+    #loader {
+      position: fixed;
+      inset: 0;
+      background: #090909;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 99999;
+      transition: .7s ease;
+    }
+
+    .loader-box {
+      text-align: center;
+    }
+
+    .loader-logo {
+      font-family: "Playfair Display", serif;
+      font-size: 38px;
+      letter-spacing: 3px;
+    }
+
+    .loader-line {
+      width: 150px;
+      height: 2px;
+      background: #333;
+      margin: 20px auto;
+      overflow: hidden;
+    }
+
+    .loader-line span {
+      display: block;
+      width: 50%;
+      height: 100%;
+      background: var(--gold);
+      animation: load 1.2s infinite;
+    }
+
+    @keyframes load {
+      from {
+        transform: translateX(-100%);
+      }
+
+      to {
+        transform: translateX(300%);
+      }
+    }
+
+
+    /* ================================
+       HEADER
+    ================================= */
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 5000;
+      transition: .3s;
+    }
+
+    header.scrolled {
+      background: rgba(8,8,8,.94);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-mark {
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--gold);
+      display: grid;
+      place-items: center;
+      color: var(--gold-light);
+      font-family: "Playfair Display", serif;
+      font-size: 19px;
+    }
+
+    .logo-text strong {
+      display: block;
+      font-family: "Playfair Display", serif;
+      font-size: 21px;
+      letter-spacing: 1px;
+    }
+
+    .logo-text small {
+      display: block;
+      font-size: 9px;
+      color: var(--muted);
+      letter-spacing: 3px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 27px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #d9d5ce;
+      font-size: 13px;
+      transition: .25s;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-light);
+    }
+
+    .nav-btn {
+      background: var(--gold);
+      color: #111;
+      padding: 11px 18px;
+      border-radius: 30px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .menu-btn {
+      display: none;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: white;
+      width: 43px;
+      height: 43px;
+      border-radius: 50%;
+      font-size: 20px;
+    }
+
+
+    /* ================================
+       HERO
+    ================================= */
+
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg,
+          rgba(5,5,5,.96) 0%,
+          rgba(5,5,5,.77) 43%,
+          rgba(5,5,5,.18) 100%),
+        url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=90")
+        center/cover;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 180px;
+      background: linear-gradient(transparent, #0b0b0b);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      padding-top: 90px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gold-light);
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 10px;
+      margin-bottom: 22px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 35px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(48px, 7vw, 90px);
+      line-height: 1.02;
+      font-weight: 600;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      color: var(--gold-light);
+      font-style: italic;
+    }
+
+    .hero p {
+      max-width: 590px;
+      color: #c8c4bc;
+      font-size: 16px;
+      margin-bottom: 35px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 23px;
+      border-radius: 5px;
+      font-weight: 700;
+      font-size: 13px;
+      transition: .3s;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: #101010;
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-light);
+      transform: translateY(-3px);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,.25);
+      color: white;
+      background: rgba(255,255,255,.04);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--gold);
+      color: var(--gold-light);
+    }
+
+    .hero-bottom {
+      position: absolute;
+      z-index: 3;
+      bottom: 35px;
+      left: 0;
+      right: 0;
+    }
+
+    .hero-info {
+      display: flex;
+      gap: 45px;
+      color: #bbb6ae;
+      font-size: 11px;
+    }
+
+    .hero-info strong {
+      display: block;
+      color: white;
+      font-size: 15px;
+      margin-bottom: 2px;
+    }
+
+
+    /* ================================
+       SECTION
+    ================================= */
+
+    section {
+      padding: 105px 0;
+    }
+
+    .section-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 30px;
+      margin-bottom: 48px;
+    }
+
+    .section-label {
+      color: var(--gold-light);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 10px;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(35px, 5vw, 57px);
+      line-height: 1.1;
+      font-weight: 500;
+    }
+
+    .section-description {
+      max-width: 440px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+
+    /* ================================
+       INTRO
+    ================================= */
+
+    .intro {
+      background: #0b0b0b;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .intro-image {
+      position: relative;
+    }
+
+    .intro-image img {
+      height: 580px;
+      object-fit: cover;
+    }
+
+    .intro-tag {
+      position: absolute;
+      right: -25px;
+      bottom: 30px;
+      width: 160px;
+      padding: 25px 20px;
+      background: var(--gold);
+      color: #111;
+    }
+
+    .intro-tag strong {
+      font-family: "Playfair Display", serif;
+      font-size: 38px;
+      display: block;
+      line-height: 1;
+    }
+
+    .intro-tag span {
+      font-size: 11px;
+    }
+
+    .intro-text p {
+      color: var(--muted);
+      margin: 20px 0;
+      font-size: 15px;
+    }
+
+    .check-list {
+      list-style: none;
+      margin-top: 25px;
+    }
+
+    .check-list li {
+      margin: 13px 0;
+      color: #ddd;
+      font-size: 13px;
+    }
+
+    .check-list li::before {
+      content: "✓";
+      color: var(--gold-light);
+      margin-right: 10px;
+    }
+
+
+    /* ================================
+       SERVICES
+    ================================= */
+
+    .services {
+      background: #111;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .service-card {
+      min-height: 310px;
+      position: relative;
+      overflow: hidden;
+      background: #181818;
+    }
+
+    .service-card img {
+      height: 100%;
+      object-fit: cover;
+      transition: transform .7s ease;
+    }
+
+    .service-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(transparent 30%, rgba(0,0,0,.9));
+    }
+
+    .service-card:hover img {
+      transform: scale(1.08);
+    }
+
+    .service-content {
+      position: absolute;
+      z-index: 2;
+      left: 20px;
+      right: 20px;
+      bottom: 20px;
+    }
+
+    .service-number {
+      color: var(--gold-light);
+      font-size: 10px;
+      letter-spacing: 2px;
+    }
+
+    .service-content h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 24px;
+      margin: 5px 0;
+    }
+
+    .service-content p {
+      color: #bbb;
+      font-size: 11px;
+    }
+
+
+    /* ================================
+       PROJECTS
+    ================================= */
+
+    .projects {
+      background: #0b0b0b;
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 28px;
+    }
+
+    .filter-btn {
+      background: transparent;
+      color: #aaa;
+      border: 1px solid var(--border);
+      padding: 9px 16px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 11px;
+      transition: .25s;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: var(--gold);
+      color: #111;
+      border-color: var(--gold);
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .project {
+      position: relative;
+      height: 380px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .project img {
+      height: 100%;
+      object-fit: cover;
+      transition: .6s;
+    }
+
+    .project:hover img {
+      transform: scale(1.06);
+    }
+
+    .project::after {
+      content: "";
+      position: absolute;
+      inset: 45% 0 0;
+      background: linear-gradient(transparent, rgba(0,0,0,.9));
+    }
+
+    .project-info {
+      position: absolute;
+      z-index: 2;
+      bottom: 22px;
+      left: 22px;
+    }
+
+    .project-info small {
+      color: var(--gold-light);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 9px;
+    }
+
+    .project-info h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 24px;
+    }
+
+
+    /* ================================
+       NUMBERS
+    ================================= */
+
+    .numbers {
+      background:
+        linear-gradient(rgba(10,10,10,.85),rgba(10,10,10,.85)),
+        url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1800&q=85")
+        center/cover fixed;
+    }
+
+    .number-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      text-align: center;
+    }
+
+    .number {
+      padding: 25px;
+      border-right: 1px solid var(--border);
+    }
+
+    .number:last-child {
+      border-right: 0;
+    }
+
+    .number strong {
+      display: block;
+      color: var(--gold-light);
+      font-family: "Playfair Display", serif;
+      font-size: 48px;
+    }
+
+    .number span {
+      color: #c0bbb3;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+
+    /* ================================
+       PROCESS
+    ================================= */
+
+    .process {
+      background: #111;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 1px;
+      background: var(--border);
+    }
+
+    .process-card {
+      background: #111;
+      padding: 35px 25px;
+    }
+
+    .process-number {
+      font-family: "Playfair Display", serif;
+      color: var(--gold);
+      font-size: 42px;
+    }
+
+    .process-card h3 {
+      margin: 20px 0 10px;
+      font-size: 18px;
+    }
+
+    .process-card p {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+
+    /* ================================
+       LOCATIONS
+    ================================= */
+
+    .locations {
+      background: #0b0b0b;
+    }
+
+    .location-box {
+      padding: 50px;
+      border: 1px solid var(--border);
+      background:
+        linear-gradient(135deg, rgba(198,161,91,.09), transparent);
+    }
+
+    .city-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 25px;
+    }
+
+    .city {
+      padding: 11px 17px;
+      border: 1px solid var(--border);
+      color: #d5d0c7;
+      font-size: 12px;
+      transition: .25s;
+    }
+
+    .city:hover {
+      border-color: var(--gold);
+      color: var(--gold-light);
+    }
+
+
+    /* ================================
+       WHY US
+    ================================= */
+
+    .why {
+      background: #111;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 15px;
+    }
+
+    .why-card {
+      padding: 35px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.025);
+    }
+
+    .why-icon {
+      width: 45px;
+      height: 45px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--gold);
+      color: var(--gold-light);
+      margin-bottom: 25px;
+    }
+
+    .why-card h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 23px;
+      margin-bottom: 10px;
+    }
+
+    .why-card p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+
+    /* ================================
+       TESTIMONIALS
+    ================================= */
+
+    .reviews {
+      background: #0b0b0b;
+    }
+
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 15px;
+    }
+
+    .review {
+      border: 1px solid var(--border);
+      padding: 30px;
+      background: #101010;
+    }
+
+    .stars {
+      color: var(--gold-light);
+      letter-spacing: 3px;
+      margin-bottom: 20px;
+    }
+
+    .review p {
+      color: #c0bbb3;
+      font-size: 13px;
+      margin-bottom: 25px;
+    }
+
+    .review strong {
+      font-size: 13px;
+    }
+
+    .review small {
+      color: var(--muted);
+      display: block;
+      margin-top: 3px;
+    }
+
+
+    /* ================================
+       CTA
+    ================================= */
+
+    .cta {
+      padding: 120px 0;
+      text-align: center;
+      background:
+        linear-gradient(rgba(7,7,7,.75),rgba(7,7,7,.92)),
+        url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1900&q=90")
+        center/cover;
+    }
+
+    .cta h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(40px,6vw,70px);
+      line-height: 1.05;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .cta p {
+      color: #bbb;
+      max-width: 560px;
+      margin: 20px auto 30px;
+      font-size: 14px;
+    }
+
+
+    /* ================================
+       CONTACT
+    ================================= */
+
+    .contact {
+      background: #111;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 70px;
+    }
+
+    .contact-info > p {
+      color: var(--muted);
+      margin: 18px 0 30px;
+      font-size: 14px;
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 15px;
+      margin: 22px 0;
+    }
+
+    .contact-icon {
+      min-width: 42px;
+      height: 42px;
+      border: 1px solid var(--gold);
+      display: grid;
+      place-items: center;
+      color: var(--gold-light);
+    }
+
+    .contact-item small {
+      color: var(--muted);
+      display: block;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .contact-item strong {
+      font-size: 14px;
+    }
+
+    .form {
+      padding: 35px;
+      border: 1px solid var(--border);
+      background: #0c0c0c;
+    }
+
+    .form h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 30px;
+      margin-bottom: 25px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 13px;
+    }
+
+    .field {
+      margin-bottom: 13px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    .field label {
+      display: block;
+      color: #aaa;
+      font-size: 10px;
+      margin-bottom: 7px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      border: 1px solid var(--border);
+      background: #151515;
+      color: white;
+      padding: 13px;
+      outline: none;
+      border-radius: 2px;
+      font-size: 13px;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: var(--gold);
+    }
+
+    .field textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .form button {
+      border: 0;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 5px;
+    }
+
+
+    /* ================================
+       FAQ
+    ================================= */
+
+    .faq {
+      background: #0b0b0b;
+    }
+
+    .faq-wrap {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: 0;
+      color: white;
+      padding: 23px 0;
+      display: flex;
+      justify-content: space-between;
+      text-align: left;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .faq-question span:last-child {
+      color: var(--gold-light);
+      font-size: 20px;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: .35s;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .faq-answer p {
+      padding: 0 0 22px;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 200px;
+    }
+
+
+    /* ================================
+       FOOTER
+    ================================= */
+
+    footer {
+      background: #070707;
+      padding: 60px 0 25px;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 45px;
+    }
+
+    .footer-brand p {
+      color: var(--muted);
+      font-size: 12px;
+      max-width: 330px;
+      margin-top: 15px;
+    }
+
+    .footer-col h4 {
+      color: white;
+      margin-bottom: 18px;
+      font-size: 13px;
+    }
+
+    .footer-col a {
+      display: block;
+      color: #918d87;
+      font-size: 12px;
+      margin: 9px 0;
+      transition: .2s;
+    }
+
+    .footer-col a:hover {
+      color: var(--gold-light);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
+      color: #777;
+      font-size: 10px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+
+    /* ================================
+       FLOATING BUTTONS
+    ================================= */
+
+    .floating {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 4000;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .float-btn {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 21px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.4);
+      transition: .25s;
+    }
+
+    .float-btn:hover {
+      transform: scale(1.08);
+    }
+
+    .whatsapp {
+      background: #25d366;
+      color: white;
+    }
+
+    .call {
+      background: var(--gold);
+      color: #111;
+    }
+
+
+    /* ================================
+       REVEAL ANIMATION
+    ================================= */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+
+    /* ================================
+       MOBILE
+    ================================= */
+
+    @media (max-width: 900px) {
+
+      .nav-links {
+        position: fixed;
+        top: 82px;
+        left: 0;
+        right: 0;
+        background: #0c0c0c;
+        border-bottom: 1px solid var(--border);
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 20px 6%;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 12px 0;
+      }
+
+      .nav-btn {
+        display: none;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .intro-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .project-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .number-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .number {
+        border-bottom: 1px solid var(--border);
+      }
+
+      .why-grid,
+      .review-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+
+    @media (max-width: 600px) {
+
+      section {
+        padding: 75px 0;
+      }
+
+      .hero {
+        min-height: 90vh;
+      }
+
+      .hero h1 {
+        font-size: 48px;
+      }
+
+      .hero p {
+        font-size: 14px;
+      }
+
+      .hero-info {
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .section-top {
+        display: block;
+      }
+
+      .section-description {
+        margin-top: 18px;
+      }
+
+      .intro-image img {
+        height: 420px;
+      }
+
+      .intro-tag {
+        right: 15px;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card {
+        min-height: 360px;
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project {
+        height: 400px;
+      }
+
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .number-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .number strong {
+        font-size: 36px;
+      }
+
+      .location-box {
+        padding: 28px 20px;
+      }
+
+      .form {
+        padding: 23px;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .field.full {
+        grid-column: auto;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+
+      .logo-text strong {
+        font-size: 17px;
+      }
+
+      .logo-text small {
+        font-size: 7px;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- =====================================
+       PRELOADER
+  ====================================== -->
+
+  <div id="loader">
+    <div class="loader-box">
+      <div class="loader-logo">TATA INTERIORS</div>
+
+      <div class="loader-line">
+        <span></span>
+      </div>
+
+      <small style="color:#888; letter-spacing:2px;">
+        CREATING BEAUTIFUL SPACES
+      </small>
+    </div>
+  </div>
+
+
+
+  <!-- =====================================
+       HEADER
+  ====================================== -->
+
+  <header id="header">
+
+    <div class="container nav">
+
+      <a href="#home" class="logo">
+
+        <div class="logo-mark">
+          TI
+        </div>
+
+        <div class="logo-text">
+          <strong>TATA INTERIORS</strong>
+          <small>FURNITURE • INTERIORS</small>
+        </div>
+
+      </a>
+
+
+      <ul class="nav-links" id="navLinks">
+
+        <li>
+          <a href="#home">Home</a>
+        </li>
+
+        <li>
+          <a href="#about">About</a>
+        </li>
+
+        <li>
+          <a href="#services">Services</a>
+        </li>
+
+        <li>
+          <a href="#projects">Projects</a>
+        </li>
+
+        <li>
+          <a href="#locations">Locations</a>
+        </li>
+
+        <li>
+          <a href="#contact">Contact</a>
+        </li>
+
+      </ul>
+
+
+      <a class="nav-btn"
+         href="tel:+919686470097">
+        Call Now
+      </a>
+
+
+      <button class="menu-btn" id="menuBtn">
+        ☰
+      </button>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- =====================================
+       HERO
+  ====================================== -->
+
+  <section class="hero" id="home">
+
+    <div class="container">
+
+      <div class="hero-content reveal">
+
+        <div class="eyebrow">
+          Premium Interior Studio
+        </div>
+
+        <h1>
+          Spaces Made
+          <span>Beautiful.</span>
+        </h1>
+
+        <p>
+          Premium furniture and interior solutions designed around
+          your lifestyle. From modular kitchens and wardrobes to
+          complete home interiors — crafted with detail and precision.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a href="#projects"
+             class="btn btn-primary">
+            Explore Projects
+          </a>
+
+          <a href="https://wa.me/919686470097?text=Hello%20Tata%20Interiors,%20I%20want%20to%20discuss%20an%20interior%20project."
+             class="btn btn-outline"
+             target="_blank">
+            WhatsApp Us
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="hero-bottom">
+
+      <div class="container hero-info">
+
+        <div>
+          <strong>Furniture</strong>
+          Custom Made
+        </div>
+
+        <div>
+          <strong>Interiors</strong>
+          Complete Solutions
+        </div>
+
+        <div>
+          <strong>Karnataka</strong>
+          Service Areas
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================
+       ABOUT
+  ====================================== -->
+
+  <section class="intro" id="about">
+
+    <div class="container intro-grid">
+
+      <div class="intro-image reveal">
+
+        <img
+          src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1200&q=85"
+          alt="Luxury Tata Interiors living room">
+
+        <div class="intro-tag">
+          <strong>TI</strong>
+          <span>Furniture • Interiors • Custom Work</span>
+        </div>
+
+      </div>
+
+
+      <div class="intro-text reveal">
+
+        <div class="section-label">
+          About Tata Interiors
+        </div>
+
+        <h2 class="section-title">
+          Your Space.
+          <br>
+          Your <span class="gold">Signature.</span>
+        </h2>
+
+        <p>
+          Tata Interiors creates thoughtfully designed furniture and
+          interior spaces for modern homes, apartments, offices and
+          commercial spaces.
+        </p>
+
+        <p>
+          We focus on practical layouts, premium finishes, clean
+          designs and custom solutions that make every space feel
+          personal.
+        </p>
+
+        <ul class="check-list">
+
+          <li>Custom furniture solutions</li>
+
+          <li>Modern and functional designs</li>
+
+          <li>Premium finishing and detailing</li>
+
+          <li>Complete interior execution</li>
+
+          <li>Residential and commercial work</li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================
+       SERVICES
+  ====================================== -->
+
+  <section class="services" id="services">
+
+    <div class="container">
+
+      <div class="section-top reveal">
+
+        <div>
+          <div class="section-label">
+            What We Create
+          </div>
+
+          <h2 class="section-title">
+            Complete Interior
+            <br>
+            <span class="gold">Solutions.</span>
+          </h2>
+        </div>
+
+        <p class="section-description">
+          From one custom furniture piece to a complete home interior,
+          Tata Interiors brings design, craftsmanship and functionality
+          together.
+        </p>
+
+      </div>
+
+
+      <div class="service-grid">
+
+
+        <div class="service-card reveal">
+
+          <img
+            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=85"
+            alt="Modular Kitchen">
+
+          <div class="service-content">
+            <span class="service-number">01 / KITCHEN</span>
+            <h3>Modular Kitchen</h3>
+            <p>Modern, practical and elegant kitchen solutions.</p>
+          </div>
+
+        </div>
+
+
+        <div class="service-card reveal">
+
+          <img
+            src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=900&q=85"
+            alt="Bedroom Interior">
+
+          <div class="service-content">
+            <span class="service-number">02 / BEDROOM</span>
+            <h3>Bedroom</h3>
+            <p>Comfortable spaces with custom storage.</p>
+          </div>
+
+        </div>
+
+
+        <div class="service-card reveal">
+
+          <img
+            src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=900&q=85"
+            alt="Living Room">
+
+          <div class="service-content">
+            <span class="service-number">03 / LIVING</span>
+            <h3>Living Room</h3>
+            <p>Beautiful living spaces made for everyday life.</p>
+          </div>
+
+        </div>
+
+
+        <div class="service-card reveal">
+
+          <img
+            src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=900&q=85"
+            alt="Wardrobe">
+
+          <div class="service-content">
+            <span class="service-number">04 / STORAGE</span>
+            <h3>Wardrobes</h3>
+            <p>Smart storage with premium finishes.</p>
+          </div>
+
+        </div>
+
+
+        <div class="service-card reveal">
+
+          <img
+            src="https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=900&q=85"
+            alt="TV Unit">
+
+          <div class="service-content">
+            <span class="service-number">05 / ENTERTAINMENT</span>
+            <h3>TV Units</h3>
+            <p>Elegant entertainment walls and storage.</p>
+          </div>
+
+        </div>
+
+
+        <div class="service-card reveal">
+
+          <img
+            src="https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=900&q=85"
+            alt="Pooja Room">
+
+          <div class="service-content">
+            <span class="service-number">06 / POOJA</span>
+            <h3>Pooja Room</h3>
+            <p>Traditional warmth with modern craftsmanship.</p>
+          </div>
+
+        </div>
+
+
+        <div class="service-card reveal">
+
+          <img
+            src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=85"
+            alt="Office Interior">
+
+          <div class="service-content">
+            <span class="service-number">07 / OFFICE</span>
+            <h3>Office Interiors</h3>
+            <p>Professional spaces designed for productivity.</p>
+          </div>
+
+        </div>
+
+
+        <div class="service-card reveal">
+
+          <img
+            src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=900&q=85"
+            alt="Custom Furniture">
+
+          <div class="service-content">
+            <span class="service-number">08 / CUSTOM</span>
+            <h3>Custom Furniture</h3>
+            <p>Furniture created specifically for your space.</p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================
+       PROJECTS
+  ====================================== -->
+
+  <section class="projects" id="projects">
+
+    <div class="container">
+
+      <div class="section-top reveal">
+
+        <div>
+
+          <div class="section-label">
+            Selected Work
+          </div>
+
+          <h2 class="section-title">
+            Our Recent
+            <span class="gold">Projects.</span>
+          </h2>
+
+        </div>
+
+        <p class="section-description">
+          A selection of interior concepts and furniture styles.
+          Replace these demo images with your actual Tata Interiors
+          project photographs.
+        </p>
+
+      </div>
+
+
+      <div class="filters">
+
+        <button class="filter-btn active" data-filter="all">
+          All
+        </button>
+
+        <button class="filter-btn" data-filter="kitchen">
+          Kitchen
+        </button>
+
+        <button class="filter-btn" data-filter="bedroom">
+          Bedroom
+        </button>
+
+        <button class="filter-btn" data-filter="living">
+          Living
+        </button>
+
+        <button class="filter-btn" data-filter="furniture">
+          Furniture
+        </button>
+
+      </div>
+
+
+      <div class="project-grid">
+
+
+        <div class="project reveal" data-category="kitchen">
+
+          <img
+            src="https://images.unsplash.com/photo-1600585152915-d208bec867a1?auto=format&fit=crop&w=1000&q=85"
+            alt="Kitchen Interior">
+
+          <div class="project-info">
+            <small>Kitchen</small>
+            <h3>Modern Kitchen</h3>
+          </div>
+
+        </div>
+
+
+        <div class="project reveal" data-category="bedroom">
+
+          <img
+            src="https://images.unsplash.com/photo-1617104678098-de229db51175?auto=format&fit=crop&w=1000&q=85"
+            alt="Bedroom Interior">
+
+          <div class="project-info">
+            <small>Bedroom</small>
+            <h3>Luxury Bedroom</h3>
+          </div>
+
+        </div>
+
+
+        <div class="project reveal" data-category="living">
+
+          <img
+            src="https://images.unsplash.com/photo-1600210491369-e753d80a41f3?auto=format&fit=crop&w=1000&q=85"
+            alt="Living Room Interior">
+
+          <div class="project-info">
+            <small>Living</small>
+            <h3>Contemporary Living</h3>
+          </div>
+
+        </div>
+
+
+        <div class="project reveal" data-category="furniture">
+
+          <img
+            src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1000&q=85"
+            alt="Custom Sofa">
+
+          <div class="project-info">
+            <small>Furniture</small>
+            <h3>Custom Furniture</h3>
+          </div>
+
+        </div>
+
+
+        <div class="project reveal" data-category="kitchen">
+
+          <img
+            src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1000&q=85"
+            alt="Premium Kitchen">
+
+          <div class="project-info">
+            <small>Kitchen</small>
+            <h3>Premium Kitchen</h3>
+          </div>
+
+        </div>
+
+
+        <div class="project reveal" data-category="bedroom">
+
+          <img
+            src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1000&q=85"
+            alt="Modern Bedroom">
+
+          <div class="project-info">
+            <small>Bedroom</small>
+            <h3>Modern Bedroom</h3>
+          </div>
+
+        </div>
+
+
+        <div class="project reveal" data-category="living">
+
+          <img
+            src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1000&q=85"
+            alt="Living Room">
+
+          <div class="project-info">
+            <small>Living</small>
+            <h3>Designer Living Room</h3>
+          </div>
+
+        </div>
+
+
+        <div class="project reveal" data-category="furniture">
+
+          <img
+            src="https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=1000&q=85"
+            alt="Designer Furniture">
+
+          <div class="project-info">
+            <small>Furniture</small>
+            <h3>Designer Furniture</h3>
+          </div>
+
+        </div>
+
+
+        <div class="project reveal" data-category="furniture">
+
+          <img
+            src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1000&q=85"
+            alt="Custom Furniture">
+
+          <div class="project-info">
+            <small>Furniture</small>
+            <h3>Custom Collection</h3>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================
+       NUMBERS
+  ====================================== -->
+
+  <section class="numbers">
+
+    <div class="container">
+
+      <div class="number-grid">
+
+        <div class="number reveal">
+          <strong>12+</strong>
+          <span>Design Categories</span>
+        </div>
+
+        <div class="number reveal">
+          <strong>5+</strong>
+          <span>Major Cities</span>
+        </div>
+
+        <div class="number reveal">
+          <strong>100%</strong>
+          <span>Custom Approach</span>
+        </div>
+
+        <div class="number reveal">
+          <strong>1:1</strong>
+          <span>Personal Attention</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================
+       PROCESS
+  ====================================== -->
+
+  <section class="process">
+
+    <div class="container">
+
+      <div class="section-top reveal">
+
+        <div>
+
+          <div class="section-label">
+            How We Work
+          </div>
+
+          <h2 class="section-title">
+            From Idea To
+            <span class="gold">Reality.</span>
+          </h2>
+
+        </div>
+
+        <p class="section-description">
+          A simple and transparent process to turn your ideas into
+          beautiful, functional spaces.
+        </p>
+
+      </div>
+
+
+      <div class="process-grid">
+
+        <div class="process-card reveal">
+
+          <div class="process-number">
+            01
+          </div>
+
+          <h3>Consultation</h3>
+
+          <p>
+            Understand your requirements, space, budget and design
+            preferences.
+          </p>
+
+        </div>
+
+
+        <div class="process-card reveal">
+
+          <div class="process-number">
+            02
+          </div>
+
+          <h3>Design</h3>
+
+          <p>
+            Plan the layout, furniture, materials, finishes and
+            overall look.
+          </p>
+
+        </div>
+
+
+        <div class="process-card reveal">
+
+          <div class="process-number">
+            03
+          </div>
+
+          <h3>Craft</h3>
+
+          <p>
+            Build your furniture and interior elements with attention
+            to detail.
+          </p>
+
+        </div>
+
+
+        <div class="process-card reveal">
+
+          <div class="process-number">
+            04
+          </div>
+
+          <h3>Installation</h3>
+
+          <p>
+            Install and finish the project to create your completed
+            space.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================
+       LOCATIONS
+  ====================================== -->
+
+  <section class="locations" id="locations">
+
+    <div class="container">
+
+      <div class="location-box reveal">
+
+        <div class="section-label">
+          Service Areas
+        </div>
+
+        <h2 class="section-title">
+          Serving
+          <span class="gold">Karnataka.</span>
+        </h2>
+
+        <p style="color:#aaa; margin-top:15px; max-width:650px;">
+          Contact Tata Interiors to confirm service availability for
+          your exact location.
+        </p>
+
+
+        <div class="city-list">
+
+          <span class="city">BLR — Bengaluru</span>
+
+          <span class="city">MYS — Mysuru</span>
+
+          <span class="city">TUM — Tumakuru</span>
+
+          <span class="city">MLR — Mangaluru</span>
+
+          <span class="city">HUB — Hubballi</span>
+
+          <span class="city">Dharwad</span>
+
+          <span class="city">Belagavi</span>
+
+          <span class="city">Shivamogga</span>
+
+          <span class="city">Davangere</span>
+
+          <span class="city">Udupi</span>
+
+          <span class="city">Hassan</span>
+
+          <span class="city">Chikkamagaluru</span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================
+       WHY US
+  ====================================== -->
+
+  <section class="why">
+
+    <div class="container">
+
+      <div class="section-top reveal">
+
+        <div>
+
+          <div class="section-label">
+            Why Tata Interiors
+          </div>
+
+          <h2 class="section-title">
+            Designed With
+            <span class="gold">Purpose.</span>
+          </h2>
+
+        </div>
+
+      </div>
+
+
+      <div class="why-grid">
+
+        <div class="why-card reveal">
+
+          <div class="why-icon">
+            ✦
+          </div>
+
+          <h3>Custom Design</h3>
+
+          <p>
+            Your furniture and interiors are planned around your
+            space, lifestyle and requirements.
+          </p>
+
+        </div>
+
+
+        <div class="why-card reveal">
+
+          <div class="why-icon">
+            ◆
+          </div>
+
+          <h3>Premium Finish</h3>
+
+          <p>
+            We focus on clean detailing, practical materials and a
+            refined final appearance.
+          </p>
+
+        </div>
+
+
+        <div class="why-card reveal">
+
+          <div class="why-icon">
+            ✓
+          </div>
+
+          <h3>Complete Work</h3>
+
+          <p>
+            From furniture to full interior execution, everything can
+            be planned as one complete project.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================
+       REVIEWS
+  ====================================== -->
+
+  <section class="reviews">
+
+    <div class="container">
+
+      <div class="section-top reveal">
+
+        <div>
+
+          <div class="section-label">
+            Client Experience
+          </div>
+
+          <h2 class="section-title">
+            Built Around
+            <span class="gold">Trust.</span>
+          </h2>
+
+        </div>
+
+      </div>
+
+
+      <div class="review-grid">
+
+
+        <div class="review reveal">
+
+          <div class="stars">
+            ★★★★★
+          </div>
+
+          <p>
+            “Replace this sample text with a genuine review from
+            your Tata Interiors customer.”
+          </p>
+
+          <strong>Customer Name</strong>
+          <small>Bengaluru</small>
+
+        </div>
+
+
+        <div class="review reveal">
+
+          <div class="stars">
+            ★★★★★
+          </div>
+
+          <p>
+            “Add your real customer feedback here after completing
+            your interior project.”
+          </p>
+
+          <strong>Customer Name</strong>
+          <small>Mysuru</small>
+
+        </div>
+
+
+        <div class="review reveal">
+
+          <div class="stars">
+            ★★★★★
+          </div>
+
+          <p>
+            “Real project reviews will make this section even more
+            powerful for new customers.”
+          </p>
+
+          <strong>Customer Name</strong>
+          <small>Karnataka</small>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================
+       CTA
+  ====================================== -->
+
+  <section class="cta">
+
+    <div class="container reveal">
+
+      <div class="section-label">
+        Start Your Project
+      </div>
+
+      <h2>
+        Let's Create A Space
+        <span class="gold">You'll Love.</span>
+      </h2>
+
+      <p>
+        Tell us about your home, office or furniture requirement.
+        We'll discuss the possibilities with you.
+      </p>
+
+      <div class="hero-buttons"
+           style="justify-content:center;">
+
+        <a href="https://wa.me/919686470097?text=Hello%20Tata%20Interiors,%20I%20want%20a%20quotation%20for%20my%20interior%20project."
+           target="_blank"
+           class="btn btn-primary">
+          Get WhatsApp Quote
+        </a>
+
+        <a href="tel:+919686470097"
+           class="btn btn-outline">
+          Call 9686470097
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================
+       CONTACT
+  ====================================== -->
+
+  <section class="contact" id="contact">
+
+    <div class="container contact-grid">
+
+
+      <div class="contact-info reveal">
+
+        <div class="section-label">
+          Contact Tata Interiors
+        </div>
+
+        <h2 class="section-title">
+          Let's Talk About
+          <span class="gold">Your Space.</span>
+        </h2>
+
+        <p>
+          Have a new home, apartment, office or furniture requirement?
+          Contact us and share your requirements.
+        </p>
+
+
+        <div class="contact-item">
+
+          <div class="contact-icon">
+            ☎
+          </div>
+
+          <div>
+
+            <small>Phone</small>
+
+            <strong>
+              <a href="tel:+919686470097">
+                +91 96864 70097
+              </a>
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <div class="contact-item">
+
+          <div class="contact-icon">
+            ☎
+          </div>
+
+          <div>
+
+            <small>Alternate Phone</small>
+
+            <strong>
+              <a href="tel:+919610631415">
+                +91 96106 31415
+              </a>
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <div class="contact-item">
+
+          <div class="contact-icon">
+            WA
+          </div>
+
+          <div>
+
+            <small>WhatsApp</small>
+
+            <strong>
+              Available for enquiries
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <div class="contact-item">
+
+          <div class="contact-icon">
+            IN
+          </div>
+
+          <div>
+
+            <small>Service</small>
+
+            <strong>
+              Bengaluru & Karnataka
+            </strong>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="form reveal">
+
+        <h3>
+          Request A Quote
+        </h3>
+
+        <form id="quoteForm">
+
+          <div class="form-grid">
+
+
+            <div class="field">
+
+              <label>
+                Your Name
+              </label>
+
+              <input
+                type="text"
+                id="name"
+                placeholder="Enter your name"
+                required>
+
+            </div>
+
+
+            <div class="field">
+
+              <label>
+                Phone
+              </label>
+
+              <input
+                type="tel"
+                id="phone"
+                placeholder="Your phone number"
+                required>
+
+            </div>
+
+
+            <div class="field">
+
+              <label>
+                City
+              </label>
+
+              <input
+                type="text"
+                id="city"
+                placeholder="Your city">
+
+            </div>
+
+
+            <div class="field">
+
+              <label>
+                Work Type
+              </label>
+
+              <select id="work">
+
+                <option value="Complete Interior">
+                  Complete Interior
+                </option>
+
+                <option value="Modular Kitchen">
+                  Modular Kitchen
+                </option>
+
+                <option value="Bedroom">
+                  Bedroom
+                </option>
+
+                <option value="Wardrobe">
+                  Wardrobe
+                </option>
+
+                <option value="Living Room">
+                  Living Room
+                </option>
+
+                <option value="TV Unit">
+                  TV Unit
+                </option>
+
+                <option value="Pooja Room">
+                  Pooja Room
+                </option>
+
+                <option value="Custom Furniture">
+                  Custom Furniture
+                </option>
+
+                <option value="Office Interior">
+                  Office Interior
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div class="field full">
+
+              <label>
+                Project Details
+              </label>
+
+              <textarea
+                id="message"
+                placeholder="Tell us about your requirements..."></textarea>
+
+            </div>
+
+
+            <div class="field full">
+
+              <button
+                type="submit"
+                class="btn btn-primary">
+
+                Send Enquiry on WhatsApp
+
+              </button>
+
+            </div>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================
+       FAQ
+  ====================================== -->
+
+  <section class="faq">
+
+    <div class="container">
+
+      <div class="section-top reveal">
+
+        <div>
+
+          <div class="section-label">
+            FAQ
+          </div>
+
+          <h2 class="section-title">
+            Frequently Asked
+            <span class="gold">Questions.</span>
+          </h2>
+
+        </div>
+
+      </div>
+
+
+      <div class="faq-wrap">
+
+
+        <div class="faq-item">
+
+          <button class="faq-question">
+
+            <span>
+              What type of interior work do you do?
+            </span>
+
+            <span>
+              +
+            </span>
+
+          </button>
+
+          <div class="faq-answer">
+
+            <p>
+              Tata Interiors can handle furniture, modular kitchens,
+              wardrobes, bedrooms, living rooms, TV units, pooja
+              rooms, office interiors and custom furniture.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+          <button class="faq-question">
+
+            <span>
+              Do you take custom furniture orders?
+            </span>
+
+            <span>
+              +
+            </span>
+
+          </button>
+
+          <div class="faq-answer">
+
+            <p>
+              Yes. Custom furniture can be designed according to your
+              available space, requirements and preferred style.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+          <button class="faq-question">
+
+            <span>
+              Which areas do you serve?
+            </span>
+
+            <span>
+              +
+            </span>
+
+          </button>
+
+          <div class="faq-answer">
+
+            <p>
+              Tata Interiors is focused on Bengaluru and Karnataka.
+              Contact us to confirm availability for your exact
+              location.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+          <button class="faq-question">
+
+            <span>
+              How can I request a quotation?
+            </span>
+
+            <span>
+              +
+            </span>
+
+          </button>
+
+          <div class="faq-answer">
+
+            <p>
+              Use the enquiry form on this website or contact us
+              directly through WhatsApp or phone.
+            </p>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================
+       FOOTER
+  ====================================== -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+
+        <div class="footer-brand">
+
+          <div class="logo">
+
+            <div class="logo-mark">
+              TI
+            </div>
+
+            <div class="logo-text">
+              <strong>TATA INTERIORS</strong>
+              <small>FURNITURE • INTERIORS</small>
+            </div>
+
+          </div>
+
+          <p>
+            Furniture • Interiors • Custom Work
+            <br>
+            Modern Designs • Premium Finish
+          </p>
+
+        </div>
+
+
+        <div class="footer-col">
+
+          <h4>Company</h4>
+
+          <a href="#about">About</a>
+
+          <a href="#services">Services</a>
+
+          <a href="#projects">Projects</a>
+
+          <a href="#contact">Contact</a>
+
+        </div>
+
+
+        <div class="footer-col">
+
+          <h4>Services</h4>
+
+          <a href="#services">Modular Kitchen</a>
+
+          <a href="#services">Bedroom</a>
+
+          <a href="#services">Wardrobes</a>
+
+          <a href="#services">Custom Furniture</a>
+
+        </div>
+
+
+        <div class="footer-col">
+
+          <h4>Contact</h4>
+
+          <a href="tel:+919686470097">
+            9686470097
+          </a>
+
+          <a href="tel:+919610631415">
+            9610631415
+          </a>
+
+          <a href="https://wa.me/919686470097"
+             target="_blank">
+            WhatsApp
+          </a>
+
+        </div>
+
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+        <span>
+          © <span id="year"></span> Tata Interiors. All Rights Reserved.
+        </span>
+
+        <span>
+          Furniture • Interiors • Custom Work
+        </span>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- =====================================
+       FLOATING BUTTONS
+  ====================================== -->
+
+  <div class="floating">
+
+    <a
+      class="float-btn whatsapp"
+      href="https://wa.me/919686470097?text=Hello%20Tata%20Interiors,%20I%20want%20to%20know%20about%20your%20interior%20services."
+      target="_blank"
+      aria-label="WhatsApp">
+      WA
+    </a>
+
+    <a
+      class="float-btn call"
+      href="tel:+919686470097"
+      aria-label="Call">
+      ☎
+    </a>
+
+  </div>
+
+
+
+  <!-- =====================================
+       JAVASCRIPT
+  ====================================== -->
+
+  <script>
+
+    /* ================================
+       LOADER
+    ================================= */
+
+    window.addEventListener("load", function() {
+
+      setTimeout(function() {
+
+        const loader = document.getElementById("loader");
+
+        loader.style.opacity = "0";
+        loader.style.pointerEvents = "none";
+
+        setTimeout(function() {
+          loader.remove();
+        }, 700);
+
+      }, 800);
+
+    });
+
+
+    /* ================================
+       HEADER SCROLL
+    ================================= */
+
+    const header = document.getElementById("header");
+
+    window.addEventListener("scroll", function() {
+
+      if (window.scrollY > 50) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+
+    });
+
+
+    /* ================================
+       MOBILE MENU
+    ================================= */
+
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", function() {
+
+      navLinks.classList.toggle("open");
+
+      menuBtn.textContent =
+        navLinks.classList.contains("open")
+        ? "×"
+        : "☰";
+
+    });
+
+
+    document.querySelectorAll(".nav-links a").forEach(function(link) {
+
+      link.addEventListener("click", function() {
+
+        navLinks.classList.remove("open");
+        menuBtn.textContent = "☰";
+
+      });
+
+    });
+
+
+    /* ================================
+       REVEAL ON SCROLL
+    ================================= */
+
+    const revealElements =
+      document.querySelectorAll(".reveal");
+
+    const observer =
+      new IntersectionObserver(
+
+        function(entries) {
+
+          entries.forEach(function(entry) {
+
+            if (entry.isIntersecting) {
+
+              entry.target.classList.add("show");
+
+              observer.unobserve(entry.target);
+
+            }
+
+          });
+
+        },
+
+        {
+          threshold: 0.12
+        }
+
+      );
+
+
+    revealElements.forEach(function(element) {
+
+      observer.observe(element);
+
+    });
+
+
+    /* ================================
+       PROJECT FILTER
+    ================================= */
+
+    const filterButtons =
+      document.querySelectorAll(".filter-btn");
+
+    const projects =
+      document.querySelectorAll(".project");
+
+
+    filterButtons.forEach(function(button) {
+
+      button.addEventListener("click", function() {
+
+        filterButtons.forEach(function(btn) {
+          btn.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+        const filter =
+          button.getAttribute("data-filter");
+
+
+        projects.forEach(function(project) {
+
+          const category =
+            project.getAttribute("data-category");
+
+
+          if (
+            filter === "all" ||
+            category === filter
+          ) {
+
+            project.style.display = "block";
+
+          } else {
+
+            project.style.display = "none";
+
+          }
+
+        });
+
+      });
+
+    });
+
+
+    /* ================================
+       FAQ
+    ================================= */
+
+    const faqQuestions =
+      document.querySelectorAll(".faq-question");
+
+
+    faqQuestions.forEach(function(question) {
+
+      question.addEventListener("click", function() {
+
+        const item =
+          question.parentElement;
+
+        const wasOpen =
+          item.classList.contains("open");
+
+
+        document.querySelectorAll(".faq-item")
+          .forEach(function(otherItem) {
+
+            otherItem.classList.remove("open");
+
+            const symbol =
+              otherItem.querySelector(
+                ".faq-question span:last-child"
+              );
+
+            if (symbol) {
+              symbol.textContent = "+";
+            }
+
+          });
+
+
+        if (!wasOpen) {
+
+          item.classList.add("open");
+
+          question.querySelector(
+            "span:last-child"
+          ).textContent = "−";
+
+        }
+
+      });
+
+    });
+
+
+    /* ================================
+       WHATSAPP QUOTE FORM
+    ================================= */
+
+    const quoteForm =
+      document.getElementById("quoteForm");
+
+
+    quoteForm.addEventListener("submit", function(event) {
+
+      event.preventDefault();
+
+
+      const name =
+        document.getElementById("name").value.trim();
+
+      const phone =
+        document.getElementById("phone").value.trim();
+
+      const city =
+        document.getElementById("city").value.trim();
+
+      const work =
+        document.getElementById("work").value;
+
+      const message =
+        document.getElementById("message").value.trim();
+
+
+      const whatsappMessage =
+        `Hello Tata Interiors,
+
+I want a quotation for an interior/furniture project.
+
+Name: ${name}
+Phone: ${phone}
+City: ${city}
+Work Required: ${work}
+Project Details: ${message}
+
+Please contact me regarding this project.`;
+
+
+      const whatsappURL =
+        "https://wa.me/919686470097?text="
+        + encodeURIComponent(whatsappMessage);
+
+
+      window.open(
+        whatsappURL,
+        "_blank"
+      );
+
+    });
+
+
+    /* ================================
+       CURRENT YEAR
+    ================================= */
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+  </script>
+
+</body>
+</html>
